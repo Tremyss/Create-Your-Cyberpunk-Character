@@ -1,0 +1,2 @@
+- karakter névnél random gomb,
+- online névgenerátorból fetch-elni a neveket
