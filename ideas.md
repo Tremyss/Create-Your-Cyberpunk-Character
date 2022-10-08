@@ -1,2 +1,4 @@
 - karakter névnél random gomb,
 - online névgenerátorból fetch-elni a neveket
+- ne használjunk formot, csak simán divekbe menjenek az inputok.
+- breaching button

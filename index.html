@@ -9,63 +9,122 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
-    <!-- ! Karakter alkotás -->
-    <form class="charsheet-form">
-      <div class="form-line">
-        <h3 for="">Karakteralkotás:</h3>
-      </div>
-      <div class="form-line">
-        <label for="">Karakter Neve</label>
-        <input type="text" />
-      </div>
-      <!-- ? dropdown -->
-      <div class="form-line">
-        <label for="">Nem</label>
-        <input type="text" />
-      </div>
-      <div class="form-line">
-        <label for="">Faj</label>
-        <input type="text" />
-      </div>
-      <div class="form-line">
-        <label for="">Kaszt</label>
-        <input type="text" />
-      </div>
-    </form>
-
-    <!-- ! Központi kép -->
-
-    <div class="center-img"></div>
-
-    <!-- ! Karakterlap JS-ből-->
-    <div class="charsheet-display">
-      <div class="form-line">
-        <h3 for="">Karakterlap</h3>
-      </div>
-      <div class="form-line">
-        <label for="">Karakter Neve</label>
-        <input type="text" />
-      </div>
-      <!-- ? dropdown -->
-      <div class="form-line">
-        <label for="">Nem</label>
-        <input type="text" />
-      </div>
-      <div class="form-line">
-        <label for="">Faj</label>
-        <input type="text" />
-      </div>
-      <div class="form-line">
-        <label for="">Kaszt</label>
-        <input type="text" />
-      </div>
+    <div class="page-title">
+      <img
+        src="./pic/logo/Cyberpunk_2077_logo.png"
+        alt="Cyberpunk"
+        id="mainLogo"
+      />
+      <!-- <h2 class="title-text">Cyberpunk</h2> -->
     </div>
+    <container class="mid-container">
+      <!-- ! CHARACTER INPUT FORM -->
+      <div class="charsheet-form">
+        <div class="form-title">
+          <h3 for="">YOUR CHOICES</h3>
+        </div>
+        <div class="form-line">
+          <label class="form-label">NAME</label>
+          <input id="nameInput" type="text" />
+        </div>
+        <!-- ? dropdown -->
+        <div class="form-line drop-container">
+          <label class="form-label">GENDER</label>
+          <select class="drop-content" id="genderDrop">
+            <option class="drop-text dropNull" disabled selected value>
+              please select
+            </option>
+            <option class="drop-text" id="dropFemale">Female</option>
+            <option class="drop-text" id="dropMale">Male</option>
+            <option class="drop-text" id="dropNonbinary">Nonbinary</option>
+          </select>
+        </div>
+        <div class="form-line drop-container">
+          <label class="form-label">CLASS</label>
+          <select class="drop-content" id="classDrop">
+            <option class="drop-text dropNull" disabled selected value>
+              please select
+            </option>
+            <option class="drop-text" id="rockerboyDrop">Rockerboy</option>
+            <option class="drop-text" id="soloDrop">Solo</option>
+            <option class="drop-text" id="netrunnerDrop">Netrunner</option>
+            <option class="drop-text" id="crystaljockDrop">Crystaljock</option>
+            <option class="drop-text" id="techieDrop">Techie</option>
+            <option class="drop-text" id="medtechDrop">Medtech</option>
+            <option class="drop-text" id="mediaDrop">Media</option>
+            <option class="drop-text" id="copDrop">Cop</option>
+            <option class="drop-text" id="execDrop">Exec</option>
+            <option class="drop-text" id="fixerDrop">Fixer</option>
+            <option class="drop-text" id="panzerboyDrop">Panzerboy</option>
+            <option class="drop-text" id="nomadDrop">Nomad</option>
+          </select>
+        </div>
+        <div class="form-line drop-container">
+          <label class="form-label">CULTURAL ORIGIN</label>
+          <select class="drop-content" id="originDrop">
+            <option class="drop-text dropNull" disabled selected value>
+              please select
+            </option>
+            <option class="drop-text" id="naDrop">North American</option>
+            <option class="drop-text" id="scaDrop">
+              South/Central American
+            </option>
+            <option class="drop-text" id="weDrop">Western European</option>
+            <option class="drop-text" id="eeDrop">Eastern European</option>
+            <option class="drop-text" id="menaDrop">
+              Middle East/North African
+            </option>
+            <option class="drop-text" id="ssaDrop">Sub-Saharan African</option>
+            <option class="drop-text" id="saDrop">South Asian</option>
+            <option class="drop-text" id="seaDrop">South East Asian</option>
+            <option class="drop-text" id="eaDrop">East Asian</option>
+            <option class="drop-text" id="opiDrop">
+              Oceania/Pacific Islander
+            </option>
+          </select>
+        </div>
+      </div>
 
-    <script src="index.js"></script>
+      <!-- ! PICTURE CHANGES BASED ON CHOICES -->
+      <div class="charsheet-mid">
+        <div class="center-img" id="classImgReciever">
+          <img src="./pic/Default.png" alt="." id="classImg" />
+        </div>
+      </div>
+
+      <!-- ! CHARACTER OUTPUT FROM JS-->
+      <div class="charsheet-display">
+        <div class="form-title">
+          <h3 for="">CHARACTER SHEET</h3>
+        </div>
+        <div class="form-line">
+          <label class="form-label">NAME</label>
+          <div id="nameReciever"></div>
+        </div>
+        <!-- ? dropdown -->
+        <div class="form-line">
+          <label class="form-label">GENDER</label>
+          <div class="icon-reciever" id="genderReciever"></div>
+        </div>
+        <div class="form-line">
+          <label class="form-label">CLASS</label>
+          <div id="classReciever"></div>
+        </div>
+        <div class="form-line">
+          <label class="form-label">CULTURAL ORIGIN</label>
+          <div class="icon-reciever" id="originReciever"></div>
+        </div>
+      </div>
+    </container>
+
+    <div id="bottomText" class="bottom-text"></div>
+
+    <script src="script.js"></script>
   </body>
 </html>
